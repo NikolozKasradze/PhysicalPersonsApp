@@ -29,7 +29,7 @@ public class PersonController : ControllerBase
     /// </summary>
     /// <param name="id"></param>
     /// <returns></returns>
-    [HttpGet("Get")]
+    [HttpGet]
     [ProducesResponseType((int)HttpStatusCode.OK)]
     [ProducesResponseType(typeof(Error), (int)HttpStatusCode.BadRequest)]
     [ProducesResponseType((int)HttpStatusCode.NotFound)]
@@ -42,7 +42,7 @@ public class PersonController : ControllerBase
     /// </summary>
     /// <param name="command"></param>
     /// <returns></returns>
-    [HttpPost("Save")]
+    [HttpPost]
     [ProducesResponseType((int)HttpStatusCode.OK)]
     [ProducesResponseType(typeof(Error), (int)HttpStatusCode.BadRequest)]
     [ProducesResponseType(typeof(Error), (int)HttpStatusCode.Conflict)]
@@ -55,7 +55,7 @@ public class PersonController : ControllerBase
     /// </summary>
     /// <param name="command"></param>
     /// <returns></returns>
-    [HttpPut("Change")]
+    [HttpPut]
     [ProducesResponseType((int)HttpStatusCode.OK)]
     [ProducesResponseType(typeof(Error), (int)HttpStatusCode.BadRequest)]
     [ProducesResponseType((int)HttpStatusCode.NotFound)]
@@ -73,7 +73,7 @@ public class PersonController : ControllerBase
     [ProducesResponseType((int)HttpStatusCode.OK)]
     [ProducesResponseType(typeof(Error), (int)HttpStatusCode.BadRequest)]
     [ProducesResponseType((int)HttpStatusCode.NotFound)]
-    [HttpPost("AddPicture")]
+    [HttpPost("Picture")]
     public async Task<ActionResult> AddPictureNew(int personId, IFormFile image)
     {
         await _mediator.Send(new AddPictureCommand { PersonId = personId, Image = image });
@@ -87,7 +87,7 @@ public class PersonController : ControllerBase
     /// </summary>
     /// <param name="id"></param>
     /// <returns></returns>
-    [HttpDelete("Delete")]
+    [HttpDelete]
     [ProducesResponseType((int)HttpStatusCode.OK)]
     [ProducesResponseType(typeof(Error), (int)HttpStatusCode.BadRequest)]
     [ProducesResponseType((int)HttpStatusCode.NotFound)]

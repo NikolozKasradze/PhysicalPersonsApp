@@ -11,7 +11,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddApplicationServices();
 builder.Services.AddPersistenceServices(builder.Configuration);
-builder.Services.AddLocalization();//weird
+builder.Services.AddLocalization();
 builder.Services.AddControllers(config =>
 {
     config.Filters.Add<ValidationFilter>();

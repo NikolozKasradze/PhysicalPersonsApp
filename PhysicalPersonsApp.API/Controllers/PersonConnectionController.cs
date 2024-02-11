@@ -24,7 +24,7 @@ public class PersonConnectionController : ControllerBase
     /// Adds connected person 
     /// </summary>
     /// <returns></returns>
-    [HttpPost("Add")]
+    [HttpPost]
     [ProducesResponseType((int)HttpStatusCode.OK)]
     [ProducesResponseType(typeof(Error), (int)HttpStatusCode.BadRequest)]
     [ProducesResponseType(typeof(Error), (int)HttpStatusCode.Conflict)]
@@ -36,7 +36,7 @@ public class PersonConnectionController : ControllerBase
     /// </summary>
     /// <param name="id"></param>
     /// <returns></returns>
-    [HttpDelete("Delete")]
+    [HttpDelete]
     [ProducesResponseType((int)HttpStatusCode.OK)]
     [ProducesResponseType(typeof(Error), (int)HttpStatusCode.BadRequest)]
     [ProducesResponseType((int)HttpStatusCode.NotFound)]
